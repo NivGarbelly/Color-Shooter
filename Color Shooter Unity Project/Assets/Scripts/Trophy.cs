@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Trophy : MonoBehaviour
 {
-    [SerializeField]
-    private enum ObjColor
+    [SerializeField]private enum ObjColor
     {
         red = 0,
         green = 1,
@@ -27,7 +26,6 @@ public class Trophy : MonoBehaviour
 
     private void Awake()
     {
-        _enemyAiBase.Add(FindObjectOfType<EnemyAIBase>());
         switch (currentColor)
         {
             case ObjColor.red:
@@ -40,6 +38,11 @@ public class Trophy : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material.color = Color.green;
                 break;
         }
+    }
+
+    private void Start()
+    {
+        foreach (var enemyAiBase in FindObjectsOfType<EnemyAIBase>()) _enemyAiBase.Add(enemyAiBase);
     }
 
 
@@ -92,6 +95,7 @@ public class Trophy : MonoBehaviour
         {
             _gameManeger.enemiesResetColors();
             boom.Play();
+            boonmSound.Play();
             gameObject.GetComponent<Renderer>().material.color = Color.white;
             gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.4f);
             isDisabele = true;
@@ -111,11 +115,13 @@ public class Trophy : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player") && _gameManeger.Trophies.Count > 1)
         {
+            boonmSound.Play();
             boom.Play();
             gameObject.GetComponent<Renderer>().material.color = Color.white;
             gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.4f);
             gameObject.GetComponent<Collider>().enabled = false;
             isDisabele = true;
+            _gameManeger.Trophies.Remove(this.gameObject);
         }
     }
     

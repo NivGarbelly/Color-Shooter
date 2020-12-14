@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\NivGa\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\NivGa\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Color Shooter Unity Project.-996090895.00" t="ExcludeRecursive" />
-    <e p="C:\Users\NivGa\Desktop\Snowflake Games\Project in Procsses\Color-Shooet\Color Shooter Unity Project" t="IncludeRecursive">
+    <e p="C:\Users\NivGa\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Color Shooter Unity Project.1692095889.00" t="ExcludeRecursive" />
+    <e p="C:\Users\NivGa\Desktop\Snowflake Games\Project in Procsses\Color-Shooter\Color Shooter Unity Project" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="NavMeshComponents" t="Include">
@@ -37,6 +37,7 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="SettingManeger.cs" t="Include" />
           <e p="Trophy.cs" t="Include" />
+          <e p="WallScript.cs" t="Include" />
         </e>
         <e p="StarfieldMaterials" t="Include">
           <e p="README" t="Include">

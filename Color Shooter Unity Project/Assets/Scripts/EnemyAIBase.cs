@@ -15,7 +15,6 @@ public class EnemyAIBase : MonoBehaviour
     }
 
     [SerializeField] private NavMeshAgent agent;
-
     private bool isStateChanged = false;
     private EnemyStates prevState;
     [SerializeField] private EnemyStates currentState;

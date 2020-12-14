@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicSettings : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private AudioSource Music;
-    public static bool musicEnabled = true;
+    [SerializeField] private AudioSource mainMenuMusic;
+    [SerializeField] private AudioSource gameMusic;
+    public static float vol;
 
     private void Awake()
     {
@@ -22,13 +24,19 @@ public class MusicSettings : MonoBehaviour
 
     private void Update()
     {
-        if (musicEnabled==true)
+
+        int sceneNum = SceneManager.GetActiveScene().buildIndex;
+        if (sceneNum!=0)
         {
-            Music.enabled = true;
+            gameMusic.volume = vol;
+            mainMenuMusic.mute = true;
+            gameMusic.mute = false;
         }
         else
         {
-            Music.enabled = false;
+            mainMenuMusic.volume = vol;
+            mainMenuMusic.mute = false;
+            gameMusic.mute = true;
         }
     }
 }

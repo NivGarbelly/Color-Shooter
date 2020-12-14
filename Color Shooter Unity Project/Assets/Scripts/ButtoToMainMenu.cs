@@ -9,4 +9,9 @@ public class ButtoToMainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void ExitApp()
+    {
+        Application.Quit();
+    }
 }

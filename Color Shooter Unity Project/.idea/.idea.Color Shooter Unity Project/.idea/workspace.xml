@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d946bb9-7ec4-43b6-af5c-0a777b9bebf7" name="Default Changelist" comment="" />
+    <list default="true" id="8d946bb9-7ec4-43b6-af5c-0a777b9bebf7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Wall.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Wall.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CanvasManeger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CanvasManeger.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ThanksForPlaying.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ThanksForPlaying.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/478804__ianstargem__ambience-2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/478804__ianstargem__ambience-2.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Mixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/Mixer.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Music.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Music.wav.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,30 +31,38 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasManeger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Sounds/GameMusic.wav.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelLoaderManeger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/1.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WallScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasManeger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Trophy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PauseManeger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManeger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelLoaderManeger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CanvasManeger.cs" />
         <option value="$PROJECT_DIR$/Assets/MissionReport.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MissionReport.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" />
         <option value="$PROJECT_DIR$/Assets/BreakableAsteroids/Scripts/Fracture.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Walls.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" />
       </list>
     </option>
   </component>
@@ -107,6 +135,11 @@
       <workItem from="1606805022108" duration="5607000" />
       <workItem from="1607359579595" duration="4518000" />
       <workItem from="1607513870577" duration="600000" />
+      <workItem from="1607675738685" duration="45000" />
+      <workItem from="1607676169495" duration="661000" />
+      <workItem from="1607885968158" duration="1898000" />
+      <workItem from="1607889239889" duration="1072000" />
+      <workItem from="1607965014010" duration="3444000" />
     </task>
     <servers />
   </component>
@@ -137,9 +170,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600060700057" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600282214796">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1607887132649">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600282214796" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607887132649" />
   </component>
 </project>

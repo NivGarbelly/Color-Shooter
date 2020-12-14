@@ -2,10 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingManeger : MonoBehaviour
 {
-    
+
+    [SerializeField] private Slider slider;
+
+    private void Update()
+    {
+        musicOn();
+    }
 
     public void Res1080()
     {
@@ -26,11 +33,7 @@ public class SettingManeger : MonoBehaviour
 
     public void musicOn()
     {
-        MusicSettings.musicEnabled = true;
+        MusicSettings.vol= slider.value;
     }
     
-    public void musicOff()
-    {
-        MusicSettings.musicEnabled = false;
-    }
 }
