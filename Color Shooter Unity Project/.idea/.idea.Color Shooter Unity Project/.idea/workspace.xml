@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d946bb9-7ec4-43b6-af5c-0a777b9bebf7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/Wall.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Wall.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CanvasManeger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CanvasManeger.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trophy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trophy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ThanksForPlaying.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ThanksForPlaying.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ButtoToMainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MusicSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingManeger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/478804__ianstargem__ambience-2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/478804__ianstargem__ambience-2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Mixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/Mixer.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Music.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Music.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -140,6 +128,8 @@
       <workItem from="1607885968158" duration="1898000" />
       <workItem from="1607889239889" duration="1072000" />
       <workItem from="1607965014010" duration="3444000" />
+      <workItem from="1608043377565" duration="798000" />
+      <workItem from="1608044252981" duration="630000" />
     </task>
     <servers />
   </component>

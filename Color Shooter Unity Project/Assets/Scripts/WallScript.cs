@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEditor.AI;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
@@ -40,7 +35,9 @@ public class WallScript : MonoBehaviour
                 var cubeRenderer = GetComponent<Renderer>();
                 if (otheRenderer.material.GetColor("_BaseColor") ==cubeRenderer.material.GetColor("_BaseColor"))
                 {
-                    Destroy(this.gameObject);
+                   gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.black);
+                   var col = GetComponent<Collider>();
+                   col.enabled = false;
                 }
             }
         }

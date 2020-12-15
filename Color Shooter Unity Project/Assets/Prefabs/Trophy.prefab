@@ -113,6 +113,8 @@ MonoBehaviour:
   boom: {fileID: 5242350374226888380}
   boonmSound: {fileID: 0}
   currentColor: 0
+  _enemyAiBase: []
+  walls: []
 --- !u!82 &-1164957377283366608
 AudioSource:
   m_ObjectHideFlags: 0
@@ -124,7 +126,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4952730132246270367, guid: 2dda8760c7492054e84c7b20458df3a7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8f29edda7aec5e9439371b66330e8291, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9d08c25ed73f21c44820012c060b4e33, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
