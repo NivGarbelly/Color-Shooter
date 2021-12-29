@@ -36,7 +36,7 @@ public class WallScript : MonoBehaviour
                 if (otheRenderer.material.GetColor("_BaseColor") ==cubeRenderer.material.GetColor("_BaseColor"))
                 {
                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.black);
-                   var col = GetComponent<Collider>();
+                   Collider col = GetComponent<Collider>();
                    col.enabled = false;
                 }
             }
