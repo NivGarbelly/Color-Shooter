@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyAIBase : MonoBehaviour
 {
-    [SerializeField] private GameManeger _gameManeger;
+   private GameManeger _gameManeger;
 
     public enum EnemyStates
     {
@@ -14,15 +14,17 @@ public class EnemyAIBase : MonoBehaviour
         NotFollow = 3
     }
 
-    [SerializeField] private NavMeshAgent agent;
+    private NavMeshAgent agent;
     private bool isStateChanged = false;
     private EnemyStates prevState;
     [SerializeField] private EnemyStates currentState;
     [SerializeField] private bool idleIsDefault;
-    [SerializeField] private Transform player;
+    private Transform player;
     [SerializeField] private float minDistToFollow;
     [SerializeField] private float speed;
-    [SerializeField] private AudioSource Changesound;
+    [SerializeField] private float lerpSpeed= 1f;
+    private float startTime;
+    [SerializeField] private AudioSource changeSound;
     [SerializeField] private AudioSource EnemiesSound;
     [SerializeField] private Transform[] patrolPoints;
     private int _currentPoint = 0;
@@ -31,13 +33,18 @@ public class EnemyAIBase : MonoBehaviour
 
     private void Awake()
     {
+        changeSound = GetComponent<AudioSource>();
+        _gameManeger = FindObjectOfType<GameManeger>();
+        agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        startTime = Time.time;
         if (agent != null)
         {
             foreach (var point in patrolPoints)
             {
                 patrolPositions.Add(point.position);
             }
-
             agent.speed = speed;
             SetStateToDefault();
         }
@@ -163,9 +170,11 @@ public class EnemyAIBase : MonoBehaviour
                 var cubeRenderer = GetComponentsInChildren<Renderer>();
                 foreach (var ren in cubeRenderer)
                 {
-                    ren.material.SetColor("_BaseColor", otheRenderer.material.GetColor("_BaseColor"));
+                    //ren.material.SetColor("_BaseColor", otheRenderer.material.GetColor("_BaseColor"));
+                    float t = (Time.time - startTime) * lerpSpeed;
+                    ren.material.color= Color.Lerp( ren.material.GetColor("_BaseColor"),otheRenderer.material.GetColor("_BaseColor"),t);
                 }
-                Changesound.Play();
+                changeSound.Play();
             }
             _gameManeger.enemiesColors.Clear();
             _gameManeger.AddColorToList();

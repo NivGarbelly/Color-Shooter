@@ -9,35 +9,54 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     private Vector3 movement;
-    [SerializeField] private Camera cam;
+    private Camera cam;
     private Vector3 mousePos;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform shootPoint;
-    [SerializeField] private GameManeger _gameManeger;
+    private Transform shootPoint;
+    private GameManeger gameManeger;
     [SerializeField] private GameObject colorIndicator;
     [SerializeField] private GameObject playerArt;
-    [SerializeField] private CanvasManeger _canvasManeger;
+    private CanvasManeger _canvasManeger;
     [SerializeField] private bool isLose = false;
-    [SerializeField] private AudioSource movmenntSound;
-
+    private AudioSource movementSound;
+    private Rigidbody rigidbody;
+    private void Awake()
+    {
+        movementSound = GetComponent<AudioSource>();
+        _canvasManeger = FindObjectOfType<CanvasManeger>();
+        shootPoint = GameObject.FindGameObjectWithTag("ShootPoint").transform;
+        gameManeger = FindObjectOfType<GameManeger>();
+        cam = FindObjectOfType<Camera>();
+        rigidbody= GetComponent<Rigidbody>();
+        isLose = false;
+        var render = colorIndicator.GetComponent<Renderer>();
+        render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
+    }
+    void FixedUpdate()
+    {
+        if (gameManeger.isWin == false)
+        {
+            if (isLose == false)
+            {
+                if (_canvasManeger.isGamePaused == false)
+                {
+                    playerMovement();
+                    playerRotation();
+                }
+            }
+        }
+    }
     private void playerMovement()
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-        movement = new Vector3(-moveVertical, 0f, moveHorizontal);
-        movement *= (speed * Time.deltaTime);
-        transform.position += movement;
-        if (moveHorizontal == 0 && moveVertical==0)
+        Vector3 moveInput = new Vector3(-Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
+        rigidbody.AddForce((moveInput * speed)-rigidbody.velocity, ForceMode.Acceleration);
+        if (rigidbody.velocity!=Vector3.zero)
         {
-            movmenntSound.Stop(); 
+            movementSound.volume=0.5f;
         }
-        
-        if(moveHorizontal != 0 || moveVertical!=0)
+        if (rigidbody.velocity==Vector3.zero)
         {
-            if (movmenntSound.isPlaying!=true)
-            {
-                movmenntSound.Play();
-            }
+            movementSound.volume=0f;
         }
     }
 
@@ -47,6 +66,8 @@ public class PlayerController : MonoBehaviour
         var angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
         Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 0.95f);
+        //Quaternion moveInput2 = new Quaternion(Input.GetAxisRaw("Horizontal"), playerArt.transform.rotation.y,-Input.GetAxisRaw("Vertical") ,playerArt.transform.rotation.w);
+        //playerArt.transform.rotation=Quaternion.Lerp(playerArt.transform.rotation, Quaternion.RotateTowards(playerArt.transform.rotation,moveInput2.normalized,0.4f), 1f);
     }
 
     private void playerShoot()
@@ -59,7 +80,7 @@ public class PlayerController : MonoBehaviour
                 var tempBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
                 var rigid = tempBullet.GetComponent<Rigidbody>();
                 rigid.velocity = -shootPoint.right * 7f;
-                _gameManeger.nextColorSet();
+                gameManeger.nextColorSet();
                 var render = colorIndicator.GetComponent<Renderer>();
                 render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
             }
@@ -84,32 +105,10 @@ public class PlayerController : MonoBehaviour
         _canvasManeger.restartLevel();
         Destroy(this.gameObject);
     }
-
-    private void Awake()
-    {
-        isLose = false;
-        var render = colorIndicator.GetComponent<Renderer>();
-        render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
-    }
-
-    void FixedUpdate()
-    {
-        if (_gameManeger.isWin == false)
-        {
-            if (isLose == false)
-            {
-                if (_canvasManeger.isGamePaused == false)
-                {
-                    playerMovement();
-                    playerRotation();
-                }
-            }
-        }
-    }
-
+    
     private void Update()
     {
-        if (_gameManeger.isWin == false)
+        if (gameManeger.isWin == false)
         {
             if (isLose == false)
             {

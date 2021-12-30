@@ -19,6 +19,7 @@ public class CanvasManeger : MonoBehaviour
     public TextMeshProUGUI Red;
     public TextMeshProUGUI Blue;
     public TextMeshProUGUI Green;
+    public TextMeshProUGUI White;
     public GameManeger gameManeger;
     public GameObject loadingScreen;
     public Slider slider;
@@ -37,7 +38,8 @@ public class CanvasManeger : MonoBehaviour
         {
             Red.SetText(gameManeger.redCount.ToString());
             Blue.SetText(gameManeger.blueCount.ToString());
-            Green.SetText(gameManeger.greenCount.ToString());   
+            Green.SetText(gameManeger.greenCount.ToString()); 
+            White.SetText(gameManeger.whiteCount.ToString());
         }
     }
 

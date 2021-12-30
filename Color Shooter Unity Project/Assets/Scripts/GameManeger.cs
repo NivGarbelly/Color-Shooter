@@ -24,6 +24,7 @@ public class GameManeger : MonoBehaviour
     public int redCount;
     public int greenCount;
     public int blueCount;
+    public int whiteCount;
 
     void Awake()
     {
@@ -100,6 +101,10 @@ public class GameManeger : MonoBehaviour
             {
                 redCount++;
             }
+            if (color == Color.white)
+            {
+                whiteCount++;
+            }
         }
     }
 
@@ -108,6 +113,7 @@ public class GameManeger : MonoBehaviour
         blueCount = 0;
         greenCount = 0;
         redCount = 0;
+        whiteCount = 0;
     }
 
     public void Win()

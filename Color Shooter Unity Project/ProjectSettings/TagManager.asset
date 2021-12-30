@@ -10,6 +10,7 @@ TagManager:
   - HUD
   - music
   - Walls
+  - ShootPoint
   layers:
   - Default
   - TransparentFX
