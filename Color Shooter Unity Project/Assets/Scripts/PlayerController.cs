@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (gameManeger.isWin == false)
+        if (gameManeger.isPaused == false)
         {
             if (isLose == false)
             {
@@ -50,14 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveInput = new Vector3(-Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
         rigidbody.AddForce((moveInput * speed)-rigidbody.velocity, ForceMode.Acceleration);
-        if (rigidbody.velocity!=Vector3.zero)
-        {
-            movementSound.volume=0.5f;
-        }
-        if (rigidbody.velocity==Vector3.zero)
-        {
-            movementSound.volume=0f;
-        }
+        movementSound.volume=rigidbody.velocity.magnitude/15;
     }
 
     private void playerRotation()
@@ -108,7 +101,7 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        if (gameManeger.isWin == false)
+        if (gameManeger.isPaused == false)
         {
             if (isLose == false)
             {
@@ -118,5 +111,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AfterWinAnim()
+    {
+        gameManeger.WinInvoked();
     }
 }

@@ -62,11 +62,11 @@ public class EnemyAIBase : MonoBehaviour
             DoAccordingToState();
         }
 
-        if (_gameManeger.isWin==true)
+        if (_gameManeger.isPaused==true)
         {
             agent.speed = 0;
         }
-        if (_gameManeger.isWin==true)
+        if (_gameManeger.isPaused==true)
         {
             agent.speed = speed;
         }

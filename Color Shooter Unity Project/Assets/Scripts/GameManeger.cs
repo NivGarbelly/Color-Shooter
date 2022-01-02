@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
@@ -20,7 +22,7 @@ public class GameManeger : MonoBehaviour
     public List<Color> enemiesColors = new List<Color>();
     public static int bulletNextColor;
     [SerializeField] private CanvasManeger _canvasManeger;
-    public bool isWin = false;
+    [FormerlySerializedAs("isWin")] public bool isPaused = false;
     public int redCount;
     public int greenCount;
     public int blueCount;
@@ -28,7 +30,7 @@ public class GameManeger : MonoBehaviour
 
     void Awake()
     {
-        isWin = false;
+        isPaused = false;
         foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
         {
             Trophies.Add(trophyObj);
@@ -50,8 +52,8 @@ public class GameManeger : MonoBehaviour
         {
             if (Trophies.Count == 0)
             {
-                isWin = true;
-                _canvasManeger.nextLevel();
+                isPaused = true;
+                
             }
         }
     }
@@ -118,12 +120,14 @@ public class GameManeger : MonoBehaviour
 
     public void Win()
     {
-        Invoke("WinInvoked",1f);
+        FindObjectOfType<Camera>().GetComponent<CinemachineBrain>().enabled = false;
+        
+        FindObjectOfType<PlayerController>().GetComponentInChildren<Animation>().CrossFade("Win");
     }
 
-    private void WinInvoked()
+    public void WinInvoked()
     {
-        isWin = true;
+        isPaused = true;
         _canvasManeger.nextLevel();
     }
 }

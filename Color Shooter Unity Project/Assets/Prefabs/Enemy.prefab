@@ -185,15 +185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848dcb88b005c454fb31ab929d76e38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManeger: {fileID: 0}
-  agent: {fileID: -8854459982485073991}
   currentState: 0
   idleIsDefault: 1
-  player: {fileID: 0}
-  minDistToFollow: 7.5
-  speed: 5
+  minDistToFollow: 9
+  speed: 7
   lerpSpeed: 0
-  Changesound: {fileID: 1667385671331303975}
+  changeSound: {fileID: 0}
   EnemiesSound: {fileID: 3901190003547020942}
   patrolPoints: []
   patrolPositions: []

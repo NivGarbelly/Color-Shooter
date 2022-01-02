@@ -8,13 +8,13 @@ public class MissionReport : MonoBehaviour
     [SerializeField] private GameManeger gameManeger;
     void Start()
     {
-        gameManeger.isWin = true;
+        gameManeger.isPaused = true;
         Time.timeScale = 0f;
     }
 
     public void ButtonClick()
     {
-        gameManeger.isWin = false;
+        gameManeger.isPaused = false;
         canvas.SetActive(false);
         Time.timeScale = 1f;
     }
