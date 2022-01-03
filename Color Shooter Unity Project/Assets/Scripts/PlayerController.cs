@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject colorIndicator;
     [SerializeField] private GameObject playerArt;
     private CanvasManeger _canvasManeger;
-    [SerializeField] private bool isLose = false;
+    public bool isLose;
     private AudioSource movementSound;
     private Rigidbody rigidbody;
     private void Awake()
@@ -28,10 +28,16 @@ public class PlayerController : MonoBehaviour
         gameManeger = FindObjectOfType<GameManeger>();
         cam = FindObjectOfType<Camera>();
         rigidbody= GetComponent<Rigidbody>();
-        isLose = false;
+        isLose = true;
+    }
+
+    private void Start()
+    {
+        playerArt.GetComponent<Animation>().CrossFade("Opening");
         var render = colorIndicator.GetComponent<Renderer>();
         render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
     }
+
     void FixedUpdate()
     {
         if (gameManeger.isPaused == false)
@@ -72,7 +78,7 @@ public class PlayerController : MonoBehaviour
             {
                 var tempBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
                 var rigid = tempBullet.GetComponent<Rigidbody>();
-                rigid.velocity = -shootPoint.right * 7f;
+                rigid.velocity = -shootPoint.right * 10f;
                 gameManeger.nextColorSet();
                 var render = colorIndicator.GetComponent<Renderer>();
                 render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
