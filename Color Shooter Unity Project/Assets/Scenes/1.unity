@@ -1496,9 +1496,9 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 7670393599165994483}
   m_Lens:
-    FieldOfView: 45
+    FieldOfView: 46.92893
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.5156249
   m_ScreenY: 0.5
   m_CameraDistance: 15
   m_DeadZoneWidth: 0
@@ -3240,7 +3240,7 @@ Transform:
   m_GameObject: {fileID: 1374949445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.19282202, y: -1.5658146, z: -1.3482993}
-  m_LocalScale: {x: 900, y: 1, z: 900}
+  m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_Children: []
   m_Father: {fileID: 349551248}
   m_RootOrder: 0
@@ -3584,7 +3584,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 45
+  field of view: 46.92893
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3610,7 +3610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 23.400002, y: 14.5, z: -6.4}
+  m_LocalPosition: {x: 23.4, y: 14.5, z: -6.7617264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 922079432}
@@ -4788,6 +4788,12 @@ PrefabInstance:
 --- !u!82 &7441315782991897032 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8912677586118197333, guid: 232578785d8d0ba419fece3667cb526a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2086552340362699165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7670393599165994483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8540612813908620398, guid: 232578785d8d0ba419fece3667cb526a,
     type: 3}
   m_PrefabInstance: {fileID: 2086552340362699165}
   m_PrefabAsset: {fileID: 0}
