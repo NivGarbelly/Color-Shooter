@@ -126,8 +126,8 @@ public class GameManeger : MonoBehaviour
     public void Win()
     {
         FindObjectOfType<Camera>().GetComponent<CinemachineBrain>().enabled = false;
-        
         FindObjectOfType<PlayerController>().GetComponentInChildren<Animation>().CrossFade("Win");
+        FindObjectOfType<PlayerController>().isLose = true;
     }
 
     public void WinInvoked()

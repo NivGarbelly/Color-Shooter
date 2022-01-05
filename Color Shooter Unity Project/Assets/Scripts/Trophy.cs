@@ -29,13 +29,13 @@ public class Trophy : MonoBehaviour
         switch (currentColor)
         {
             case ObjColor.red:
-                gameObject.GetComponent<Renderer>().material.color = Color.red;
+                gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.red);
                 break;
             case ObjColor.blue:
-                gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.blue);
                 break;
             case ObjColor.green:
-                gameObject.GetComponent<Renderer>().material.color = Color.green;
+                gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.green);
                 break;
         }
     }
@@ -96,14 +96,14 @@ public class Trophy : MonoBehaviour
             _gameManeger.enemiesResetColors();
             boom.Play();
             boonmSound.Play();
-            gameObject.GetComponent<Renderer>().material.color = Color.white;
+            gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.white);
             gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.4f);
             isDisabele = true;
             gameObject.GetComponent<Collider>().enabled = false;
             walls = GameObject.FindGameObjectsWithTag("Walls");
             foreach (var wall in walls)
             {
-                wall.SetActive(false);
+                wall.GetComponent<WallScript>().DesAnim();
             }
             foreach (var enemyAi in _enemyAiBase)
             {
@@ -117,8 +117,8 @@ public class Trophy : MonoBehaviour
         {
             boonmSound.Play();
             boom.Play();
-            gameObject.GetComponent<Renderer>().material.color = Color.white;
-            gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.4f);
+            gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.white);
+            gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.445f);
             gameObject.GetComponent<Collider>().enabled = false;
             isDisabele = true;
             _gameManeger.Trophies.Remove(this.gameObject);

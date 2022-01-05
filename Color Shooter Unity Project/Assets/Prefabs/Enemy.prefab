@@ -187,9 +187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   idleIsDefault: 1
-  minDistToFollow: 9
+  minDistToFollow: 13.5
   speed: 7
-  lerpSpeed: 0
+  lerpSpeed: 1
   changeSound: {fileID: 0}
   EnemiesSound: {fileID: 3901190003547020942}
   patrolPoints: []

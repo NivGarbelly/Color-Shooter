@@ -4,15 +4,23 @@
     <list default="true" id="8d946bb9-7ec4-43b6-af5c-0a777b9bebf7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AnimtionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimtionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trophy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trophy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Disolve.shadersubgraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Disolve.shadersubgraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemies.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemies.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Player.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Trophy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Trophy.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Wall.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Wall.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Shader Graph.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Shader Graph.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Opening.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Opening.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +54,13 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CanvasManeger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" />
       <option value="$PROJECT_DIR$/Assets/AnimtionEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1hPGsR9YTArApzgXWo43DwRjOIv" />
@@ -156,6 +164,16 @@
       <workItem from="1640897918964" duration="8000" />
       <workItem from="1640898446698" duration="761000" />
       <workItem from="1641138222426" duration="7365000" />
+      <workItem from="1641226204581" duration="1546000" />
+      <workItem from="1641228112151" duration="780000" />
+      <workItem from="1641229013320" duration="31000" />
+      <workItem from="1641229062733" duration="673000" />
+      <workItem from="1641229834466" duration="89000" />
+      <workItem from="1641229992001" duration="1109000" />
+      <workItem from="1641231221370" duration="256000" />
+      <workItem from="1641231515749" duration="722000" />
+      <workItem from="1641232816948" duration="96000" />
+      <workItem from="1641232931826" duration="768000" />
     </task>
     <servers />
   </component>

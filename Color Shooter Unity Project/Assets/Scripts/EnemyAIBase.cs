@@ -172,7 +172,7 @@ public class EnemyAIBase : MonoBehaviour
                 {
                     //ren.material.SetColor("_BaseColor", otheRenderer.material.GetColor("_BaseColor"));
                     float t = (Time.time - startTime) * lerpSpeed;
-                    ren.material.color= Color.Lerp( ren.material.GetColor("_BaseColor"),otheRenderer.material.GetColor("_BaseColor"),t);
+                    ren.material.SetColor("_BaseColor",otheRenderer.material.GetColor("_BaseColor"));
                 }
                 changeSound.Play();
             }

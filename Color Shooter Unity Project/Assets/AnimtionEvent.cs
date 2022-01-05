@@ -11,8 +11,13 @@ public class AnimtionEvent : MonoBehaviour
         gameManeger.WinInvoked();
     }
     public void Opening()
+    { 
+      FindObjectOfType<Camera>().GetComponent<CinemachineBrain>().enabled = true;
+      FindObjectOfType<PlayerController>().isLose = false;
+    }
+
+    public void desPlayerFun()
     {
-        FindObjectOfType<Camera>().GetComponent<CinemachineBrain>().enabled = true;
-       FindObjectOfType<PlayerController>().isLose = false;
+        FindObjectOfType<PlayerController>().desPlayer();
     }
 }

@@ -92,14 +92,12 @@ public class PlayerController : MonoBehaviour
         {
             var col = GetComponent<Collider>();
             col.enabled = false;
-            Destroy(colorIndicator);
-            Destroy(playerArt);
             isLose = true;
-            Invoke("desPlayer", 2f);
+            playerArt.GetComponent<Animation>().CrossFade("Death");
         }
     }
 
-    private void desPlayer()
+    public void desPlayer()
     {
         _canvasManeger.restartLevel();
         Destroy(this.gameObject);
