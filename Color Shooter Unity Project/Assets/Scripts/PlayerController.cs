@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿
+using Cinemachine;
 using UnityEngine;
-using UnityEngine.Serialization;
-
+using Cinemachine.Editor;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
@@ -57,6 +54,8 @@ public class PlayerController : MonoBehaviour
         Vector3 moveInput = new Vector3(-Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
         rigidbody.AddForce((moveInput * speed)-rigidbody.velocity, ForceMode.Acceleration);
         movementSound.volume=rigidbody.velocity.magnitude/15;
+        var cmCam = FindObjectOfType<CinemachineVirtualCameraBase>();
+        cmCam.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView= 45+1*rigidbody.velocity.magnitude*1.12f;
     }
 
     private void playerRotation()
@@ -64,11 +63,8 @@ public class PlayerController : MonoBehaviour
         var dir = Input.mousePosition - cam.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
         Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.up);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 0.95f);
-        //Quaternion moveInput2 = new Quaternion(Input.GetAxisRaw("Horizontal"), playerArt.transform.rotation.y,-Input.GetAxisRaw("Vertical") ,playerArt.transform.rotation.w);
-        //playerArt.transform.rotation=Quaternion.Lerp(playerArt.transform.rotation, Quaternion.RotateTowards(playerArt.transform.rotation,moveInput2.normalized,0.4f), 1f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 0.70f);
     }
-
     private void playerShoot()
     {
 

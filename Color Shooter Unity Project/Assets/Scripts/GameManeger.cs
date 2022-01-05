@@ -30,6 +30,7 @@ public class GameManeger : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 150;
         isPaused = false;
         foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
         {
@@ -125,7 +126,6 @@ public class GameManeger : MonoBehaviour
 
     public void Win()
     {
-        FindObjectOfType<Camera>().GetComponent<CinemachineBrain>().enabled = false;
         FindObjectOfType<PlayerController>().GetComponentInChildren<Animation>().CrossFade("Win");
         FindObjectOfType<PlayerController>().isLose = true;
     }
