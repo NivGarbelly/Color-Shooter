@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,11 +29,15 @@ public class EnemyAIBase : MonoBehaviour
     [SerializeField] private AudioSource EnemiesSound;
     [SerializeField] private Transform[] patrolPoints;
     private int _currentPoint = 0;
+    private bool playerDead = false;
 
     [SerializeField] private List<Vector3> patrolPositions;
+    private Vector3 startPosition;
 
     private void Awake()
     {
+        playerDead = false;
+        startPosition = transform.position;
         changeSound = GetComponent<AudioSource>();
         _gameManeger = FindObjectOfType<GameManeger>();
         agent = GetComponent<NavMeshAgent>();
@@ -78,14 +83,21 @@ public class EnemyAIBase : MonoBehaviour
 
         var distToPlayer = Vector3.Distance(transform.position, player.position);
 
-
-        if (distToPlayer <= minDistToFollow)
+        if (playerDead==false)
         {
-            currentState = EnemyStates.Follow;
+            if (distToPlayer <= minDistToFollow)
+            {
+                currentState = EnemyStates.Follow;
+            }
+        
+            else
+            {
+                SetStateToDefault();
+            }
         }
         else
         {
-            SetStateToDefault();
+            currentState = EnemyStates.NotFollow;
         }
 
         isStateChanged = prevState != currentState;
@@ -156,7 +168,7 @@ public class EnemyAIBase : MonoBehaviour
         if (player != null)
         {
             agent.isStopped = false;
-            agent.SetDestination(-player.position);
+            agent.SetDestination(startPosition);
         }
     }
 
@@ -184,6 +196,16 @@ public class EnemyAIBase : MonoBehaviour
             Invoke("Resume",0.5f);
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerDead = true;
+            Debug.Log(playerDead);
+        }
+    }
+
     private void Resume()
     {
      agent.speed = speed;

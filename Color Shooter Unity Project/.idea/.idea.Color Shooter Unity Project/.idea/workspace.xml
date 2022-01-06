@@ -5,8 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AnimtionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimtionEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Death.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Death.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Oleto DEMO SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Oleto DEMO SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +44,12 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/CanvasManeger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/AnimtionEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1hPGsR9YTArApzgXWo43DwRjOIv" />
@@ -161,6 +164,7 @@
       <workItem from="1641232816948" duration="96000" />
       <workItem from="1641232931826" duration="768000" />
       <workItem from="1641393296534" duration="5239000" />
+      <workItem from="1641455597338" duration="2279000" />
     </task>
     <servers />
   </component>
