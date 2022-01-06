@@ -1,7 +1,6 @@
 ﻿
 using Cinemachine;
 using UnityEngine;
-using Cinemachine.Editor;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
@@ -54,7 +53,7 @@ public class PlayerController : MonoBehaviour
         Vector3 moveInput = new Vector3(-Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
         rigidbody.AddForce((moveInput * speed)-rigidbody.velocity, ForceMode.Acceleration);
         movementSound.volume=rigidbody.velocity.magnitude/15;
-        var cmCam = FindObjectOfType<CinemachineVirtualCameraBase>();
+        var cmCam = FindObjectOfType<CinemachineVirtualCamera>();
         cmCam.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView= 45+1*rigidbody.velocity.magnitude*1.12f;
     }
 
