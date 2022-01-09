@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-
+﻿using System;
+using UnityEngine;
+[ExecuteInEditMode]
 public class WallScript : MonoBehaviour
 {
     public bool coloredWall= false;
@@ -10,6 +11,7 @@ public class WallScript : MonoBehaviour
         blue = 2,
     };
     [SerializeField] private ObjColor currentColor;
+
     private void Awake()
     {
         GetComponent<Animation>().CrossFade("Start");
@@ -18,15 +20,19 @@ public class WallScript : MonoBehaviour
             switch (currentColor)
             {
                 case ObjColor.red:
-                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.red);
+                    gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.red);
                     break;
                 case ObjColor.blue:
-                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.blue);
+                    gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.blue);
                     break;
                 case ObjColor.green:
-                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.green);
+                    gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.green);
                     break;
             } 
+        }
+        else
+        {
+            gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.white);
         }
     }
 

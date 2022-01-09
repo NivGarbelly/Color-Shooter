@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class AnimtionEvent : MonoBehaviour
 {
+    private GameManeger _gameManeger;
     private void FixedUpdate()
     {
         var dir = Input.mousePosition - FindObjectOfType<Camera>().WorldToScreenPoint(transform.position);
@@ -22,10 +23,11 @@ public class AnimtionEvent : MonoBehaviour
         gameManeger.WinInvoked();
     }
     public void Opening()
-    { 
-      var cmCam = FindObjectOfType<CinemachineVirtualCameraBase>();
-      cmCam.Follow = this.transform;
-      FindObjectOfType<PlayerController>().isLose = false;
+    {
+        _gameManeger = FindObjectOfType<GameManeger>();
+        _gameManeger.isPaused = false;
+        var cmCam = FindObjectOfType<CinemachineVirtualCameraBase>();
+        cmCam.Follow = this.transform;
     }
 
     public void desPlayerFun()

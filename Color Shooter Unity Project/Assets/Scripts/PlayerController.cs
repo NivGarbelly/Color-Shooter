@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject colorIndicator;
     [SerializeField] private GameObject playerArt;
     private CanvasManeger _canvasManeger;
-    public bool isLose;
     private AudioSource movementSound;
     private Rigidbody rigidbody;
     private void Awake()
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour
         gameManeger = FindObjectOfType<GameManeger>();
         cam = FindObjectOfType<Camera>();
         rigidbody= GetComponent<Rigidbody>();
-        isLose = true;
     }
 
     private void Start()
@@ -38,13 +36,10 @@ public class PlayerController : MonoBehaviour
     {
         if (gameManeger.isPaused == false)
         {
-            if (isLose == false)
+            if (_canvasManeger.isGamePaused == false) 
             {
-                if (_canvasManeger.isGamePaused == false)
-                {
                     playerMovement();
-                    playerRotation();
-                }
+                    playerRotation(); 
             }
         }
     }
@@ -87,7 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             var col = GetComponent<Collider>();
             col.enabled = false;
-            isLose = true;
+            gameManeger.isPaused = true;
             playerArt.GetComponent<Animation>().CrossFade("Death");
         }
     }
@@ -102,18 +97,10 @@ public class PlayerController : MonoBehaviour
     {
         if (gameManeger.isPaused == false)
         {
-            if (isLose == false)
+            if (_canvasManeger.isGamePaused == false)
             {
-                if (_canvasManeger.isGamePaused == false)
-                {
                     playerShoot();
-                }
             }
         }
-    }
-
-    public void AfterWinAnim()
-    {
-        gameManeger.WinInvoked();
     }
 }

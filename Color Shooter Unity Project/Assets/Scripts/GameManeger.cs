@@ -22,7 +22,7 @@ public class GameManeger : MonoBehaviour
     public List<Color> enemiesColors = new List<Color>();
     public static int bulletNextColor;
     [SerializeField] private CanvasManeger _canvasManeger;
-    [FormerlySerializedAs("isWin")] public bool isPaused = false;
+    public bool isPaused = false;
     public int redCount;
     public int greenCount;
     public int blueCount;
@@ -31,7 +31,7 @@ public class GameManeger : MonoBehaviour
     void Awake()
     {
         Application.targetFrameRate = 150;
-        isPaused = false;
+        isPaused = true;
         foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
         {
             Trophies.Add(trophyObj);
@@ -127,7 +127,14 @@ public class GameManeger : MonoBehaviour
     public void Win()
     {
         FindObjectOfType<PlayerController>().GetComponentInChildren<Animation>().CrossFade("Win");
-        FindObjectOfType<PlayerController>().isLose = true;
+    }
+
+    public void Lost()
+    {
+        foreach (var enemy in enemies)
+        {
+            enemy.GetComponent<EnemyAIBase>().playerDead = true;
+        }
     }
 
     public void WinInvoked()

@@ -193,6 +193,7 @@ MonoBehaviour:
   changeSound: {fileID: 0}
   EnemiesSound: {fileID: 3901190003547020942}
   patrolPoints: []
+  playerDead: 0
   patrolPositions: []
 --- !u!195 &-8854459982485073991
 NavMeshAgent:

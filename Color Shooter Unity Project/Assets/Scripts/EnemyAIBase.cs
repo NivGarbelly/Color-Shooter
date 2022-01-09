@@ -18,7 +18,7 @@ public class EnemyAIBase : MonoBehaviour
     private NavMeshAgent agent;
     private bool isStateChanged = false;
     private EnemyStates prevState;
-    [SerializeField] private EnemyStates currentState;
+    public EnemyStates currentState;
     [SerializeField] private bool idleIsDefault;
     private Transform player;
     [SerializeField] private float minDistToFollow;
@@ -29,7 +29,7 @@ public class EnemyAIBase : MonoBehaviour
     [SerializeField] private AudioSource EnemiesSound;
     [SerializeField] private Transform[] patrolPoints;
     private int _currentPoint = 0;
-    private bool playerDead = false;
+    public bool playerDead = false;
 
     [SerializeField] private List<Vector3> patrolPositions;
     private Vector3 startPosition;
@@ -42,7 +42,6 @@ public class EnemyAIBase : MonoBehaviour
         _gameManeger = FindObjectOfType<GameManeger>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        
         startTime = Time.time;
         if (agent != null)
         {
@@ -182,7 +181,6 @@ public class EnemyAIBase : MonoBehaviour
                 var cubeRenderer = GetComponentsInChildren<Renderer>();
                 foreach (var ren in cubeRenderer)
                 {
-                    //ren.material.SetColor("_BaseColor", otheRenderer.material.GetColor("_BaseColor"));
                     float t = (Time.time - startTime) * lerpSpeed;
                     ren.material.SetColor("_BaseColor",otheRenderer.material.GetColor("_BaseColor"));
                 }
@@ -202,7 +200,7 @@ public class EnemyAIBase : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerDead = true;
-            Debug.Log(playerDead);
+            _gameManeger.Lost();
         }
     }
 

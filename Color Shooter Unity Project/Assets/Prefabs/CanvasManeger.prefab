@@ -2524,7 +2524,7 @@ MonoBehaviour:
   enemies: []
   enemiesColors: []
   _canvasManeger: {fileID: 4221000841780349991}
-  isPaused: 0
+  isPaused: 1
   redCount: 0
   greenCount: 0
   blueCount: 0

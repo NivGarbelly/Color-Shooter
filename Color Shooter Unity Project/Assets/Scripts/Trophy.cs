@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class Trophy : MonoBehaviour
 {
     [SerializeField]private enum ObjColor
@@ -29,13 +29,13 @@ public class Trophy : MonoBehaviour
         switch (currentColor)
         {
             case ObjColor.red:
-                gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.red);
+                gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.red);
                 break;
             case ObjColor.blue:
-                gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.blue);
+                gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.blue);
                 break;
             case ObjColor.green:
-                gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.green);
+                gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.green);
                 break;
         }
     }
@@ -64,7 +64,7 @@ public class Trophy : MonoBehaviour
             if (counter >= _gameManeger.enemies.Count)
             {
                 col.isTrigger = true;
-                Renderer.material.SetFloat("_Smoothness", 0.4f);
+                Renderer.material.SetFloat("_Smoothness", 0.445f);
             }
             else if (counter < _gameManeger.enemies.Count)
             {
@@ -97,7 +97,7 @@ public class Trophy : MonoBehaviour
             boom.Play();
             boonmSound.Play();
             gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.white);
-            gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.4f);
+            gameObject.GetComponent<Renderer>().material.SetFloat("_Smoothness",0.445f);
             isDisabele = true;
             gameObject.GetComponent<Collider>().enabled = false;
             walls = GameObject.FindGameObjectsWithTag("Walls");
