@@ -27,7 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        playerArt.GetComponent<Animation>().CrossFade("Opening");
+        if (FindObjectOfType<MissionReport>()==null)
+        {
+            playerArt.GetComponent<Animation>().CrossFade("Opening"); 
+        }
         var render = colorIndicator.GetComponent<Renderer>();
         render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
     }

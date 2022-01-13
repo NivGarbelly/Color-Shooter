@@ -46,11 +46,7 @@ public class GameManeger : MonoBehaviour
         HUDTEST();
         nextColorSet();
     }
-
-    private void Start()
-    {
-       
-    }
+    
 
     private void FixedUpdate()
     {
