@@ -20,19 +20,19 @@ public class WallScript : MonoBehaviour
             switch (currentColor)
             {
                 case ObjColor.red:
-                    gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.red);
+                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.red);
                     break;
                 case ObjColor.blue:
-                    gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.blue);
+                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.blue);
                     break;
                 case ObjColor.green:
-                    gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.green);
+                    gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.green);
                     break;
             } 
         }
         else
         {
-            gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.white);
+            gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor",Color.white);
         }
     }
 

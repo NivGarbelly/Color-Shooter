@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8d946bb9-7ec4-43b6-af5c-0a777b9bebf7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Color Shooter Unity Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Disolve.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Disolve.shadergraph" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +43,11 @@
       <option value="$PROJECT_DIR$/Assets/AnimtionEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIBase.cs" />
       <option value="$PROJECT_DIR$/Assets/RevMask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trophy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManeger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AnimtionEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WallScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MissionReport.cs" />
     </changedPaths>
   </component>
@@ -175,6 +173,7 @@
       <workItem from="1641938554857" duration="1320000" />
       <workItem from="1642186388126" duration="1000" />
       <workItem from="1642245662886" duration="354000" />
+      <workItem from="1642249041408" duration="1128000" />
     </task>
     <servers />
   </component>
