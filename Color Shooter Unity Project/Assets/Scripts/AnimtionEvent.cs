@@ -24,7 +24,6 @@ public class AnimtionEvent : MonoBehaviour
     public void Opening()
     {
         _gameManeger = FindObjectOfType<GameManeger>();
-        _gameManeger.isPaused = false;
         var cmCam = FindObjectOfType<CinemachineVirtualCameraBase>();
         cmCam.Follow = this.transform;
     }

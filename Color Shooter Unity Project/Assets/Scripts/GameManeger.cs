@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -9,6 +9,18 @@ using Random = UnityEngine.Random;
 
 public class GameManeger : MonoBehaviour
 {
+      public enum GameState
+    {
+        PreSetup = 0,
+        SetupWalls = 1,
+        SetupEandT = 2,
+        SetupPlayer = 3,
+        Start = 4,
+        Pause = 5,
+        Win = 6,
+        Lost = 7
+    }
+    public GameState CurrentState;
     public static List<Color> colors = new List<Color>()
     {
         Color.red,
@@ -21,16 +33,16 @@ public class GameManeger : MonoBehaviour
     private Renderer enemiesRendere;
     public List<Color> enemiesColors = new List<Color>();
     public static int bulletNextColor;
-    public bool isPaused = false;
     public int redCount;
     public int greenCount;
     public int blueCount;
     public int whiteCount;
 
+
+
     void Awake()
     {
         Application.targetFrameRate = 150;
-        isPaused = true;
         foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
         {
             Trophies.Add(trophyObj);
@@ -46,17 +58,19 @@ public class GameManeger : MonoBehaviour
         nextColorSet();
     }
     
-
-    private void FixedUpdate()
+    public void CheckWin()
     {
-        if (enemies.Count != 0)
+    if (enemies.Count != 0)
         {
             if (Trophies.Count == 0)
             {
-                isPaused = true;
-                
+              ChangeState(GameState.Win);
             }
         }
+    }
+    public void ChangeState(GameState gameState)
+    {
+        CurrentState = gameState;
     }
 
     public void AddColorToList()
@@ -87,7 +101,59 @@ public class GameManeger : MonoBehaviour
         bulletNextColor = Random.Range(0, colors.Count);
     }
 
-    
+    private void DoAccordingToState()
+    {
+            switch (CurrentState)
+            {
+                case GameState.SetupWalls:
+
+                    break;
+
+                case GameState.SetupEandT:
+                    SetupEandTGame();
+                    break;
+
+                case GameState.SetupPlayer:
+                
+                break;
+
+                case GameState.Start:
+                    StartGame();
+                    break;
+
+                case GameState.Pause:
+                    PauseGame();
+                    break;
+
+                case GameState.Win:
+                //Win 
+                    break;
+                
+                case GameState.Lost:
+                //Win 
+                    break;
+            }
+    }
+    private void SetupEandTGame()
+    {
+        foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
+        {
+          trophyObj.GetComponent<Animation>().CrossFade("CreatTrophy");
+        }
+
+        foreach (var enemyObj in GameObject.FindGameObjectsWithTag("Enemies"))
+        {
+             enemyObj.GetComponent<Animation>().CrossFade("Start");
+        }
+    }
+    private void StartGame()
+    {
+
+    }
+    private void PauseGame()
+    {
+
+    }
     public void HUDTEST()
     {
         foreach (var color in enemiesColors)
@@ -131,18 +197,7 @@ public class GameManeger : MonoBehaviour
             enemy.GetComponent<EnemyAIBase>().playerDead = true;
         }
     }
-    public void CreateEnemiesandTrophies()
-    {
-            foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
-        {
-          trophyObj.GetComponent<Animation>().CrossFade("CreatTrophy");
-        }
-
-        foreach (var enemyObj in GameObject.FindGameObjectsWithTag("Enemies"))
-        {
-             enemyObj.GetComponent<Animation>().CrossFade("Start");
-        }
-    }
+   
     public void CreatePalyer()
     {
         FindAnyObjectByType<PlayerController>().CreateAnim();

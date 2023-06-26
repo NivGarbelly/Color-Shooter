@@ -25,18 +25,11 @@ public class PlayerController : MonoBehaviour
         render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
     }
 
-    private void Start()
-    {
-                  
-    }
 
     private void FixedUpdate() 
     {
-      if (gameManeger.isPaused == false)
-    {
                     playerMovement();
                     playerRotation(); 
-            }
         }     
     private void playerMovement()
     {
@@ -82,7 +75,6 @@ public class PlayerController : MonoBehaviour
         {
             var col = GetComponent<Collider>();
             col.enabled = false;
-            gameManeger.isPaused = true;
             playerArt.GetComponent<Animation>().CrossFade("Death");
         }
     }

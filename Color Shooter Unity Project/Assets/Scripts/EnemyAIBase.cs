@@ -66,11 +66,11 @@ public class EnemyAIBase : MonoBehaviour
             DoAccordingToState();
         }
 
-        if (_gameManeger.isPaused==true)
+        if (_gameManeger.CurrentState!=GameManeger.GameState.Start)
         {
             agent.speed = 0;
         }
-        if (_gameManeger.isPaused==true)
+        if (_gameManeger.CurrentState==GameManeger.GameState.Start)
         {
             agent.speed = speed;
         }

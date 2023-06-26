@@ -27,7 +27,7 @@ public class Trophy : MonoBehaviour
 
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponentInChildren<Renderer>();
         switch (currentColor)
         {
             case ObjColor.red:
