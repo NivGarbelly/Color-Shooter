@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
         rend.enabled = false;
         col.enabled = false;
         hitBoom.Play();
-        Invoke("destroy",2f);
+        Invoke("destroy",0.5f);
     }
 
     private void destroy()

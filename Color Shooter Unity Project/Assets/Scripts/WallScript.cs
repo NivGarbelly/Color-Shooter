@@ -11,9 +11,11 @@ public class WallScript : MonoBehaviour
         blue = 2,
     };
     [SerializeField] private ObjColor currentColor;
+    private GameManeger gameManeger;
 
     private void Awake()
     {
+        gameManeger= FindObjectOfType<GameManeger>();
         GetComponent<Animation>().CrossFade("Start");
         if (coloredWall == true)
         {
@@ -64,5 +66,10 @@ public class WallScript : MonoBehaviour
     public void DesObj()
     {
         Destroy(this.gameObject);
+    }
+
+    public void WallCreated()
+    {
+        gameManeger.CreateEnemiesandTrophies();
     }
 }

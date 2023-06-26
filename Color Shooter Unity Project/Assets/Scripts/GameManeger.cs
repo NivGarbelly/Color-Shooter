@@ -21,7 +21,6 @@ public class GameManeger : MonoBehaviour
     private Renderer enemiesRendere;
     public List<Color> enemiesColors = new List<Color>();
     public static int bulletNextColor;
-    [SerializeField] private CanvasManeger _canvasManeger;
     public bool isPaused = false;
     public int redCount;
     public int greenCount;
@@ -132,10 +131,20 @@ public class GameManeger : MonoBehaviour
             enemy.GetComponent<EnemyAIBase>().playerDead = true;
         }
     }
-
-    public void WinInvoked()
+    public void CreateEnemiesandTrophies()
     {
-        isPaused = true;
-        _canvasManeger.nextLevel();
+            foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
+        {
+          trophyObj.GetComponent<Animation>().CrossFade("CreatTrophy");
+        }
+
+        foreach (var enemyObj in GameObject.FindGameObjectsWithTag("Enemies"))
+        {
+             enemyObj.GetComponent<Animation>().CrossFade("Start");
+        }
+    }
+    public void CreatePalyer()
+    {
+        FindAnyObjectByType<PlayerController>().CreateAnim();
     }
 }

@@ -17,10 +17,9 @@ public class AnimtionEvent : MonoBehaviour
         transform.rotation = Quaternion.Lerp(newRotNew, newRot, 0.9f);
     }
 
-    public void AfterWinAnim()
+    public void Awake()
     {
         GameManeger gameManeger = FindObjectOfType<GameManeger>();
-        gameManeger.WinInvoked();
     }
     public void Opening()
     {

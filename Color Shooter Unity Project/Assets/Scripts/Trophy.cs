@@ -22,10 +22,12 @@ public class Trophy : MonoBehaviour
     [SerializeField] private  List<EnemyAIBase> _enemyAiBase;
     [SerializeField] private  GameObject[] walls;
     private bool isDisabele = false;
+    private Renderer renderer;
 
 
     private void Awake()
     {
+        renderer = GetComponent<Renderer>();
         switch (currentColor)
         {
             case ObjColor.red:
@@ -49,11 +51,10 @@ public class Trophy : MonoBehaviour
     void FixedUpdate()
     {
         counter = 0;
-        var Renderer = GetComponent<Renderer>();
         foreach (var enemy in _gameManeger.enemies)
         {
             var enemmyRenderer = enemy.GetComponent<Renderer>();
-            if (enemmyRenderer.material.GetColor("_BaseColor") == Renderer.material.GetColor("_BaseColor"))
+            if (enemmyRenderer.material.GetColor("_BaseColor") == renderer.material.GetColor("_BaseColor"))
             {
                 counter++;
             }
@@ -64,11 +65,11 @@ public class Trophy : MonoBehaviour
             if (counter >= _gameManeger.enemies.Count)
             {
                 col.isTrigger = true;
-                Renderer.material.SetFloat("_Smoothness", 0.445f);
+                renderer.material.SetFloat("_Smoothness", 0.445f);
             }
             else if (counter < _gameManeger.enemies.Count)
             {
-                Renderer.material.SetFloat("_Smoothness", 0f);
+                renderer.material.SetFloat("_Smoothness", 0f);
                 col.isTrigger = false;
             }
         }
@@ -124,6 +125,8 @@ public class Trophy : MonoBehaviour
             _gameManeger.Trophies.Remove(this.gameObject);
         }
     }
-    
-    
+    public void TrophyCreated()
+    {
+        _gameManeger.CreatePalyer();
+    }
 }

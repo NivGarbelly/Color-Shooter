@@ -1,4 +1,4 @@
-﻿
+
 using Cinemachine;
 using UnityEngine;
 public class PlayerController : MonoBehaviour
@@ -12,47 +12,44 @@ public class PlayerController : MonoBehaviour
     private GameManeger gameManeger;
     [SerializeField] private GameObject colorIndicator;
     [SerializeField] private GameObject playerArt;
-    private CanvasManeger _canvasManeger;
     private AudioSource movementSound;
     private Rigidbody rigidbody;
     private void Awake()
     {
         movementSound = GetComponent<AudioSource>();
-        _canvasManeger = FindObjectOfType<CanvasManeger>();
         shootPoint = GameObject.FindGameObjectWithTag("ShootPoint").transform;
         gameManeger = FindObjectOfType<GameManeger>();
         cam = FindObjectOfType<Camera>();
         rigidbody= GetComponent<Rigidbody>();
-    }
-
-    private void Start()
-    {
-        if (FindObjectOfType<MissionReport>()==null)
-        {
-            playerArt.GetComponent<Animation>().CrossFade("Opening"); 
-        }
         var render = colorIndicator.GetComponent<Renderer>();
         render.material.SetColor("_BaseColor", GameManeger.colors[GameManeger.bulletNextColor]);
     }
 
-    void FixedUpdate()
+    private void Start()
     {
-        if (gameManeger.isPaused == false)
-        {
-            if (_canvasManeger.isGamePaused == false) 
-            {
+                  
+    }
+
+    private void FixedUpdate() 
+    {
+      if (gameManeger.isPaused == false)
+    {
                     playerMovement();
                     playerRotation(); 
             }
-        }
-    }
+        }     
     private void playerMovement()
     {
-        Vector3 moveInput = new Vector3(-Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
+        Vector3 moveInput = new Vector3(-Input.GetAxis("Vertical"), 0f, Input.GetAxis("Horizontal"));;
         rigidbody.AddForce((moveInput * speed)-rigidbody.velocity, ForceMode.Acceleration);
         movementSound.volume=rigidbody.velocity.magnitude/15;
         var cmCam = FindObjectOfType<CinemachineVirtualCamera>();
-        cmCam.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView= 45+1*rigidbody.velocity.magnitude*1.12f;
+        cmCam.m_Lens.FieldOfView= 45+1*rigidbody.velocity.magnitude*1.12f;
+         float VerticalMove =Input.GetAxis("Vertical")/3.5f;
+         float HorizontalMove =Input.GetAxis("Horizontal")/3.5f;
+        var transposer = cmCam.GetCinemachineComponent<CinemachineFramingTransposer>();
+        transposer.m_ScreenX= 0.5f - HorizontalMove;
+        transposer.m_ScreenY= 0.5f + VerticalMove;
     }
 
     private void playerRotation()
@@ -91,19 +88,16 @@ public class PlayerController : MonoBehaviour
     }
 
     public void desPlayer()
-    {
-        _canvasManeger.restartLevel();
+    {  
         Destroy(this.gameObject);
     }
     
     private void Update()
     {
-        if (gameManeger.isPaused == false)
-        {
-            if (_canvasManeger.isGamePaused == false)
-            {
-                    playerShoot();
-            }
-        }
+         playerShoot();
+    }
+    public void CreateAnim()
+    {
+         playerArt.GetComponent<Animation>().CrossFade("Opening");
     }
 }
