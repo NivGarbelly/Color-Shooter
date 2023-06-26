@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 [ExecuteInEditMode]
 public class WallScript : MonoBehaviour
@@ -16,7 +16,6 @@ public class WallScript : MonoBehaviour
     private void Awake()
     {
         gameManeger= FindObjectOfType<GameManeger>();
-        GetComponent<Animation>().CrossFade("Start");
         if (coloredWall == true)
         {
             switch (currentColor)
@@ -66,10 +65,5 @@ public class WallScript : MonoBehaviour
     public void DesObj()
     {
         Destroy(this.gameObject);
-    }
-
-    public void WallCreated()
-    {
-        gameManeger.CreateEnemiesandTrophies();
     }
 }

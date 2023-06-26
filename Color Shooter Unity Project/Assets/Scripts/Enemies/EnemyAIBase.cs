@@ -25,8 +25,6 @@ public class EnemyAIBase : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float lerpSpeed= 1f;
     private float startTime;
-    [SerializeField] private AudioSource changeSound;
-    [SerializeField] private AudioSource EnemiesSound;
     [SerializeField] private Transform[] patrolPoints;
     private int _currentPoint = 0;
     public bool playerDead = false;
@@ -38,7 +36,6 @@ public class EnemyAIBase : MonoBehaviour
     {
         playerDead = false;
         startPosition = transform.position;
-        changeSound = GetComponent<AudioSource>();
         _gameManeger = FindObjectOfType<GameManeger>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -184,7 +181,6 @@ public class EnemyAIBase : MonoBehaviour
                     float t = (Time.time - startTime) * lerpSpeed;
                     ren.material.SetColor("_BaseColor",otheRenderer.material.GetColor("_BaseColor"));
                 }
-                changeSound.Play();
             }
             _gameManeger.enemiesColors.Clear();
             _gameManeger.AddColorToList();
@@ -217,7 +213,6 @@ public class EnemyAIBase : MonoBehaviour
             ren.material.SetColor("_BaseColor", Color.gray);
             ren.material.SetFloat("_Smoothness", 0f);
         }
-        EnemiesSound.Stop();
         var coll = GetComponent<Collider>();
         coll.enabled = false;
         agent.speed = 0;

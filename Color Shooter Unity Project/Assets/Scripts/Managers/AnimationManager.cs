@@ -28,7 +28,32 @@ public class AnimationManager : MonoBehaviour
         
          foreach (var playerObj in GameObject.FindGameObjectsWithTag("Player"))
         {
-             Enemies.Add(playerObj.GetComponentInChildren<Animation>());
+             Players.Add(playerObj.GetComponentInChildren<Animation>());
         }    
+   }
+   public void AnimateWalls()
+   {
+     foreach (var wallsAnim in Walls)
+     {
+          wallsAnim.CrossFade("CreateWall");
+     }
+   }
+   public void AnimteEnemiesAndTrophies()
+   {
+     foreach (var enemiesAnim in Enemies)
+     {
+          //enemiesAnim.CrossFade("CreateEnemy");
+     }
+     foreach (var trophiesAnim in Trophies)
+     {
+          trophiesAnim.CrossFade("CreateTrophy");
+     }
+   }
+   public void AnimatePlayer()
+   {
+     foreach (var playerAnim in Players)
+     {
+          playerAnim.CrossFade("CreatePlayer");
+     }
    }
 }

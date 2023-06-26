@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 [ExecuteInEditMode]
 public class Trophy : MonoBehaviour
@@ -28,16 +25,18 @@ public class Trophy : MonoBehaviour
     private void Awake()
     {
         renderer = GetComponentInChildren<Renderer>();
+        col = GetComponent<SphereCollider>();
+        _gameManeger = FindObjectOfType<GameManeger>();
         switch (currentColor)
         {
             case ObjColor.red:
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.red);
+                gameObject.GetComponentInChildren<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.red);
                 break;
             case ObjColor.blue:
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.blue);
+                gameObject.GetComponentInChildren<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.blue);
                 break;
             case ObjColor.green:
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.green);
+                gameObject.GetComponentInChildren<Renderer>().sharedMaterial.SetColor("_BaseColor",Color.green);
                 break;
         }
     }
@@ -66,10 +65,12 @@ public class Trophy : MonoBehaviour
             {
                 col.isTrigger = true;
                 renderer.material.SetFloat("_Smoothness", 0.445f);
+                renderer.material.SetFloat("_Metallic", 0f);
             }
             else if (counter < _gameManeger.enemies.Count)
             {
                 renderer.material.SetFloat("_Smoothness", 0f);
+                renderer.material.SetFloat("_Metallic", 1f);
                 col.isTrigger = false;
             }
         }
