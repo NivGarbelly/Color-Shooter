@@ -83,7 +83,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_af4653ee273b416db21b3c9bd9dc3e3e: 0
-    - Vector1_f1b008842fea40e28b2270039c8436ae: 0
+    - Vector1_f1b008842fea40e28b2270039c8436ae: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

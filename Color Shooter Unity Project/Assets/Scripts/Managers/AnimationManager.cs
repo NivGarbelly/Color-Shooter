@@ -37,23 +37,23 @@ public class AnimationManager : MonoBehaviour
      {
           wallsAnim.CrossFade("CreateWall");
      }
-   }
-   public void AnimteEnemiesAndTrophies()
-   {
      foreach (var enemiesAnim in Enemies)
      {
           //enemiesAnim.CrossFade("CreateEnemy");
      }
      foreach (var trophiesAnim in Trophies)
      {
-          trophiesAnim.CrossFade("CreateTrophy");
+          trophiesAnim.Play("CreateTrophy");
      }
-   }
-   public void AnimatePlayer()
-   {
      foreach (var playerAnim in Players)
      {
           playerAnim.CrossFade("CreatePlayer");
      }
+   Invoke("ChangeState",10f);
+   }
+   private void ChangeState()
+   {
+     var gm = GetComponentInParent<GameManeger>();
+     gm.DoAccordingToState(GameManeger.GameState.Start);
    }
 }

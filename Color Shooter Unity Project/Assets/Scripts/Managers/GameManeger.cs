@@ -11,14 +11,11 @@ public class GameManeger : MonoBehaviour
 {
       public enum GameState
     {
-        PreSetup = 0,
-        SetupWalls = 1,
-        SetupEandT = 2,
-        SetupPlayer = 3,
-        Start = 4,
-        Pause = 5,
-        Win = 6,
-        Lost = 7
+        SeupAnimations = 0,
+        Start = 1,
+        Pause = 2,
+        Win = 3,
+        Lost = 4
     }
     public GameState CurrentState;
     public static List<Color> colors = new List<Color>()
@@ -37,11 +34,13 @@ public class GameManeger : MonoBehaviour
     public int greenCount;
     public int blueCount;
     public int whiteCount;
+    AnimationManager animationManager;
 
 
 
     void Awake()
     {
+        animationManager = GetComponentInChildren<AnimationManager>();
         Application.targetFrameRate = 150;
         foreach (var trophyObj in GameObject.FindGameObjectsWithTag("Trophies"))
         {
@@ -56,6 +55,7 @@ public class GameManeger : MonoBehaviour
         AddColorToList();
         HUDTEST();
         nextColorSet();
+        DoAccordingToState(GameState.SeupAnimations);
     }
     
     public void CheckWin()
@@ -64,14 +64,11 @@ public class GameManeger : MonoBehaviour
         {
             if (Trophies.Count == 0)
             {
-              ChangeState(GameState.Win);
+              DoAccordingToState(GameState.Win);
             }
         }
     }
-    public void ChangeState(GameState gameState)
-    {
-        CurrentState = gameState;
-    }
+
 
     public void AddColorToList()
     {
@@ -101,22 +98,15 @@ public class GameManeger : MonoBehaviour
         bulletNextColor = Random.Range(0, colors.Count);
     }
 
-    private void DoAccordingToState()
+    public void DoAccordingToState(GameState gameState)
     {
+        CurrentState = gameState;
             switch (CurrentState)
             {
-                case GameState.SetupWalls:
-
+                case GameState.SeupAnimations:
+                    animationManager.AnimateWalls();
                     break;
-
-                case GameState.SetupEandT:
-                    SetupEandTGame();
-                    break;
-
-                case GameState.SetupPlayer:
-                
-                break;
-
+                default:
                 case GameState.Start:
                     StartGame();
                     break;
@@ -130,7 +120,7 @@ public class GameManeger : MonoBehaviour
                     break;
                 
                 case GameState.Lost:
-                //Win 
+                //LOSTs 
                     break;
             }
     }

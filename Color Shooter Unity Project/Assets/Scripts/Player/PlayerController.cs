@@ -28,21 +28,26 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-                    playerMovement();
-                    playerRotation(); 
-        }     
+        if(gameManeger.CurrentState==GameManeger.GameState.Start)
+        {
+           playerMovement();
+           playerRotation(); 
+        }
+                    
+ }     
     private void playerMovement()
     {
+        
         Vector3 moveInput = new Vector3(-Input.GetAxis("Vertical"), 0f, Input.GetAxis("Horizontal"));;
         rigidbody.AddForce((moveInput * speed)-rigidbody.velocity, ForceMode.Acceleration);
         movementSound.volume=rigidbody.velocity.magnitude/15;
         var cmCam = FindObjectOfType<CinemachineVirtualCamera>();
-        cmCam.m_Lens.FieldOfView= 45+1*rigidbody.velocity.magnitude*1.12f;
          float VerticalMove =Input.GetAxis("Vertical")/3.5f;
          float HorizontalMove =Input.GetAxis("Horizontal")/3.5f;
         var transposer = cmCam.GetCinemachineComponent<CinemachineFramingTransposer>();
-        transposer.m_ScreenX= 0.5f - HorizontalMove;
-        transposer.m_ScreenY= 0.5f + VerticalMove;
+        transposer.m_TrackedObjectOffset.y=1*rigidbody.velocity.magnitude*1.25f;
+        //transposer.m_ScreenX= 0.5f - HorizontalMove;
+        //transposer.m_ScreenY= 0.5f + VerticalMove;
     }
 
     private void playerRotation()
@@ -86,6 +91,7 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
+        if(gameManeger.CurrentState==GameManeger.GameState.Start)
          playerShoot();
     }
     public void CreateAnim()
